@@ -1,0 +1,9 @@
+<p>todos-item works!</p>
+<li class="completed" [ngClass]="{ 'completed':entrale.completado, 'editing':editando }"  >
+    <div class="view">
+      <input class="toggle" type="checkbox" (click)="marked(entrale.id)" [formControl]="chkField" [checked]="entrale.completado" >
+      <label (dblclick)="editar()" > {{  entrale.texto }} </label>
+      <button  (click)="borrar(entrale.id)" class="destroy"></button>
+    </div>
+    <input class="edit"  [formControl]="txtInput" [value]="entrale.texto" #edit  value="Create a TodoMVC template"  (blur)="terminarEdicion( entrale.id  )" >
+  </li>
